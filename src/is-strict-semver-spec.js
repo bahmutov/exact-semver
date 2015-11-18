@@ -9,6 +9,10 @@ describe('is-strict-semver', function () {
     la(check.fn(isStrictSemver));
   });
 
+  it('returns false for undefined', function () {
+    la(!isStrictSemver());
+  });
+
   it('passes strict versions', function () {
     la(isStrictSemver('0.1.0'));
     la(isStrictSemver('1.1.0'));

@@ -1,4 +1,5 @@
 var isStrictSemver = require('./is-strict-semver');
+var toExact = require('./to-exact');
 
 function makeExact(pkg) {
   var needSaving;
