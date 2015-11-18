@@ -1,14 +1,18 @@
 {
   "name": "exact-semver",
   "description": "Removes fuzzy characters from listed dependencies in your package.json",
-  "main": "index.js",
+  "main": "src/make-exact.js",
+  "bin": {
+    "exact-semver": "./bin/exact-semver.js"
+  },
   "version": "0.0.0-semantic-release",
   "scripts": {
     "test": "mocha src/*-spec.js",
     "watch": "mocha src/*-spec.js --watch",
     "lint": "eslint bin/*.js src/*.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "commit": "commit-wizard"
+    "commit": "commit-wizard",
+    "exact-semver": "node ./bin/exact-semver.js"
   },
   "repository": {
     "type": "git",
@@ -40,7 +44,8 @@
       "commit-msg": "validate-commit-msg",
       "pre-commit": [
         "npm run lint",
-        "npm test"
+        "npm test",
+        "npm run exact-semver"
       ],
       "pre-push": [],
       "post-commit": [],

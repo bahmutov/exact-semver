@@ -9,6 +9,41 @@
 [![devdependencies][exact-semver-devdependencies-image] ][exact-semver-devdependencies-url]
 [![semantic-release][semantic-image] ][semantic-url]
 
+Install
+
+    npm install -g exact-semver
+
+Run in the same folder as a `package.json`
+
+    exact-semver
+
+Or use as a module
+
+```js
+var exactSemver = require('exact-semver');
+var pkg = require('./package.json');
+exactSemver(pkg);
+```
+
+You can run it as a git pre-commit hook
+
+    npm install --save-dev pre-git exact-semver
+
+Then add the name to the `pre-commit` configuration inside `package.json` and in
+the `scripts` commands
+
+```json
+"scripts": {
+  "exact-semver": "exact-semver"
+},
+"configuration": {
+  "pre-commit": [
+    "npm test",
+    "npm run exact-semver"
+  ]
+}
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2015
