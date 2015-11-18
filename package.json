@@ -1,14 +1,15 @@
 {
   "name": "exact-semver",
-  "version": "1.0.0",
   "description": "Removes fuzzy characters from listed dependencies in your package.json",
   "main": "index.js",
+  "version": "0.0.0-semantic-release",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bahmutov/exact-semver.git"
+    "url": "https://github.com/bahmutov/exact-semver.git"
   },
   "keywords": [
     "semver",
@@ -23,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/bahmutov/exact-semver/issues"
   },
-  "homepage": "https://github.com/bahmutov/exact-semver#readme"
+  "homepage": "https://github.com/bahmutov/exact-semver#readme",
+  "devDependencies": {
+    "semantic-release": "^4.3.5"
+  }
 }
