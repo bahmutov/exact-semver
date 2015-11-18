@@ -1,3 +1,4 @@
+/* global describe, it */
 var la = require('lazy-ass');
 var check = require('check-more-types');
 

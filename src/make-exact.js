@@ -12,6 +12,8 @@ function makeExact(pkg) {
       }
     });
   }
+
+  return needSaving;
 }
 
 module.exports = makeExact;
