@@ -4,9 +4,11 @@
   "main": "index.js",
   "version": "0.0.0-semantic-release",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint bin/*.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "test": "mocha src/*-spec.js",
+    "watch": "mocha src/*-spec.js --watch",
+    "lint": "eslint bin/*.js src/*.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "commit-wizard"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,24 @@
   "homepage": "https://github.com/bahmutov/exact-semver#readme",
   "devDependencies": {
     "eslint": "1.9.0",
+    "lazy-ass": "1.0.0",
+    "mocha": "2.3.4",
+    "pre-git": "1.2.11",
     "semantic-release": "^4.3.5"
+  },
+  "config": {
+    "pre-git": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": [],
+      "pre-push": [],
+      "post-commit": [],
+      "post-merge": []
+    }
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
+  },
+  "dependencies": {
+    "check-more-types": "2.1.2"
   }
 }
