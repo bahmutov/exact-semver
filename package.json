@@ -33,7 +33,7 @@
     "lazy-ass": "1.0.0",
     "mocha": "2.3.4",
     "pre-git": "1.2.11",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "4.3.5"
   },
   "config": {
     "pre-git": {
