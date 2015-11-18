@@ -5,6 +5,7 @@
   "version": "0.0.0-semantic-release",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint bin/*.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/bahmutov/exact-semver#readme",
   "devDependencies": {
+    "eslint": "1.9.0",
     "semantic-release": "^4.3.5"
   }
 }
