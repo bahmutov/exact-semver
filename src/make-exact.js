@@ -1,20 +1,28 @@
 var isStrictSemver = require('./is-strict-semver');
 var toExact = require('./to-exact');
 
-function makeExact(pkg) {
+function makeExactDependencies(dependencies) {
   var needSaving;
-  if (pkg.dependencies) {
-    Object.keys(pkg.dependencies).forEach(function (name) {
-      var version = pkg.dependencies[name];
+  if (dependencies) {
+    Object.keys(dependencies).forEach(function (name) {
+      var version = dependencies[name];
       if (!isStrictSemver(version)) {
         version = toExact(version);
-        pkg.dependencies[name] = version;
+        dependencies[name] = version;
         needSaving = true;
       }
     });
   }
 
   return needSaving;
+}
+
+function makeExact(pkg) {
+  if (!pkg) {
+    throw new Error('Missing package object');
+  }
+  return makeExactDependencies(pkg.dependencies) ||
+    makeExactDependencies(pkg.devDependencies);
 }
 
 module.exports = makeExact;
