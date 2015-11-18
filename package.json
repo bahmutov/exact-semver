@@ -1,0 +1,27 @@
+{
+  "name": "exact-semver",
+  "version": "1.0.0",
+  "description": "Removes fuzzy characters from listed dependencies in your package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/exact-semver.git"
+  },
+  "keywords": [
+    "semver",
+    "semantic",
+    "exact",
+    "strict",
+    "precise",
+    "utility"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/exact-semver/issues"
+  },
+  "homepage": "https://github.com/bahmutov/exact-semver#readme"
+}
